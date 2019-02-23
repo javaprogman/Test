@@ -6,19 +6,15 @@ import java.util.Locale;
 
 public class Begin {
 
-    public double  parseFromFrance(String numberStr) throws ParseException {
+    public double  parseFromFrance(String numberStr)  {
 
         NumberFormat nfFr = NumberFormat.getInstance(Locale.FRANCE);
-        try {
-            double numFr = nfFr.parse(numberStr).doubleValue();
-            return numFr;
-        } catch (Exception e) {
-            //System.out.println("We catch the Exception in metod!");
-            //return 0;
-            throw e;
-        } finally {
-            System.out.println("Output always!");
-        }
+
+           // double numFr = nfFr.parse(numberStr).doubleValue();
+            //return numFr;
+
+            throw new IllegalArgumentException();
+
 
        // return  Double.valueOf(numberStr);
 
@@ -29,7 +25,7 @@ public class Begin {
 
         try {
             System.out.println(begin.parseFromFrance("gh123g.3a"));
-        } catch (ParseException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("We call the ParseException! ");
         }
 
